@@ -472,3 +472,88 @@ DROP TABLE Duracion;
 DROP TABLE Pais;
 DROP TABLE Temporal;
 ```
+## Modelo Logico
+| Pais        |    |           |
+| ----------- | -- | --------- |
+| Columna     | id | nombre    |
+| Restriccion | PK |           |
+|             | 1  | Argentina |
+|             | 2  | Guatemala |
+
+| Duracion    |    |          |
+| ----------- | -- | -------- |
+| Columna     | id | Duracion |
+| Restriccion | PK |          |
+|             | 1  | 154      |
+|             | 2  | 150      |
+
+| Actor       |    |          |            |
+| ----------- | -- | -------- | ---------- |
+| Columna     | id | Nombre   | Apellido   |
+| Restriccion | PK |          |            |
+|             | 1  | Nombre 1 | Apellido 1 |
+|             | 2  | Nombre 2 | Apellido 2 |
+
+| Categoria   |    |           |
+| ----------- | -- | --------- |
+| Columna     | id | Categoria |
+| Restriccion | PK |           |
+|             | 1  | Family    |
+|             | 2  | Sci-Fi    |
+
+| Lenguaje    |    |          |
+| ----------- | -- | -------- |
+| Columna     | id | Lenguaje |
+| Restriccion | PK |          |
+|             | 1  | Ingles   |
+|             | 2  | Ruso     |
+
+| Clasificacion |    |               |
+| ------------- | -- | ------------- |
+| Columna       | id | Clasificacion |
+| Restriccion   | PK |               |
+|               | 1  | A             |
+|               | 2  | R             |
+
+| Fecha       |    |            |
+| ----------- | -- | ---------- |
+| Columna     | id | Fecha      |
+| Restriccion | PK |            |
+|             | 1  | 25/06/1993 |
+|             | 2  | 25/08/2002 |
+
+| Lanzamiento |    |
+| ----------- | -- |
+| Columna     | id | Lanzamiento |
+| Restriccion | PK |  |
+|             | 1  | 2003 |
+|             | 2  | 2006 |
+
+| Tienda      |    |          |           |        |        |      |
+| ----------- | -- | -------- | --------- | ------ | ------ | ---- |
+| Columna     | ID | NOMBRE   | DIRECCION | CODIGO | CIUDAD | PAIS |
+| Restriccion | PK |          |           | PK     | PK     | PK   |
+|             |    | Tienda 1 | Dir 1     |        |        |      |
+|             |    | Tienda 2 | Dir 2     |        |        |      |
+
+| Inventario  |    |        |      |
+| ----------- | -- | ------ | ---- |
+| Columna     | ID | TIENDA | PAIS |
+| Restriccion | PK | FK     | FK   |
+|             | 1  | 1      | 2    |
+|             | 2  | 1      | 2    |
+
+| DetallePelicula |    |          |
+| --------------- | -- | -------- |
+| Columna         | ID | PELICULA | ACTOR |
+| Restriccion     | PK | FK       | FK |
+|                 | 1  | 1        | 2 |
+|                 | 2  | 1        | 2 |
+
+| Cliente     |    |            |                                               |        |           |          |        |        |
+| ----------- | -- | ---------- | --------------------------------------------- | ------ | --------- | -------- | ------ | ------ |
+| Columna     | ID | NOMBRE     | CORREO                                        | ACTIVO | DIRECCION | FECHA    | CODIGO | CIUDAD |
+| Restriccion | PK |            |                                               |        |           | FK       | FK     | FK     |
+|             |    |            |                                               |        |           |          |        |        |
+|             | 1  | Juan Pedro | [correo1@gmail.com](mailto:correo1@gmail.com) | SI     | Di2       | 2/5/2007 | 2      | 1      |
+|             | 2  | Maria Inez | [correo2@gmail.com](mailto:correo2@gmail.com) | SI     | Di3       | 5/8/2010 | 12     | 3      |
